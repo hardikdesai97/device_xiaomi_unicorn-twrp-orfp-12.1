@@ -155,9 +155,20 @@ TWRP_INCLUDE_LOGCAT := true
 # Fastbootd
 TW_INCLUDE_FASTBOOTD := true
 
+RECOVERY_VARIANT := twrp
+
+# swap x anf y axis for touch
+RECOVERY_TOUCHSCREEN_SWAP_XY := true
+
+# flip x axis for touch
+RECOVERY_TOUCHSCREEN_FLIP_X := true
+
+# flip y axis for touch ,
+RECOVERY_TOUCHSCREEN_FLIP_Y := true
+
 # Other TWRP Configurations
 TW_THEME := portrait_hdpi
-TW_FRAMERATE := 120
+TW_FRAMERATE := 60
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -177,13 +188,16 @@ TW_DEFAULT_BRIGHTNESS := 200
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
+TW_Y_OFFSET := 90
+TW_H_OFFSET := -90
 # Haptic
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-#TW_NO_SCREEN_BLANK := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko fts_touch_spi.ko focaltech.ko xiaomi_touch.ko qti_battery_charger.ko"
+# TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := true
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko synaptics_tcm_core_module.ko focaltech_ touch .ko xiaomi_ touch .ko haptic.ko goodix_core.ko"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone35/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
 TW_BACKUP_EXCLUSIONS := /data/fonts
